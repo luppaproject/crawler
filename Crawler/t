@@ -1,0 +1,543 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+	BEC/SP Bolsa Eletrônica de Compras - 
+</title><link href="../_CSS/folha_pesquisa.css" rel="stylesheet" type="text/css" /><link href="../_CSS/folha.css" rel="stylesheet" type="text/css" /><link href="../_CSS/dispensa.css" rel="stylesheet" type="text/css" /><link href="../_CSS/MenuSuperior.css" rel="stylesheet" type="text/css" /><link href="../_CSS/cabec.css" rel="stylesheet" type="text/css" /><link href="../_CSS/pregao.css" rel="stylesheet" type="text/css" /><link href="../_CSS/mensagem_alerta.css" rel="stylesheet" type="text/css" /><link href="../_CSS/menu_aba_tabela.css" rel="stylesheet" type="text/css" />    
+
+  <script src="../_Scripts/Scripts.js" language="jscript" type="text/jscript"></script>
+
+</head>
+<body >
+    <form name="aspnetForm" method="post" action="./BEC_DL_OC_ITEM.aspx?chave=&amp;OC=B5QTJFaErQ5iX8OiiiFYjsHtgAcsNbhMWChWG%2bVEwwXOXXMFjHzAXwc50G0bTP%2fd&amp;CA=" id="aspnetForm">
+<input type="hidden" name="ctl00_ToolkitScriptManager1_HiddenField" id="ctl00_ToolkitScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/BEC_Dispensa_UI/ScriptResource.axd?d=mUhfvO956iyL_SZeb5zNKc11X_KQUBPBdn-m88b7gZ1qnFuM0noAyXaW1nMzCbn7vZCPBW9FsxkL62YvyrYI8FC5kBTN-WWyuuMmkLvSzX9lGGD0i-jJWrZnNs-hI8tqyjA1446xFGj8BffenR7lUZ7j0YNZq1goX4Ye5lTQ1V4ZXveIAzu2c-Zc9iUyZwiR0&amp;t=74363d29" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C04CAD83" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="r/iaQZs8fvdOTjtCkf9E4LzMlkMwA9BdVulWiZM2BfhOP19fZiASXdvRDVmkBfdWO8IXVzWAGFLxYY/V60hWOVSb67X1iLvNn85kPoVd+0D/ZXm7DUzU44INCRwwRyQLEB393w7NbTPSCXwx0HL3xykOdgaNyrqEMyS41NZPcpO06V1AG2nzK6IBxCYJssH9DnQ9v0U0NFU7bI8ulCa/bA==" />
+    
+         <div id="pCabecalho">
+            
+            
+             
+    
+        </div>
+     
+        
+        
+        <table width="100%">
+        
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="3">
+                    <span id="ctl00_lb_Cabec">  
+<!-- 
+*  ( V5.00.059 11/03/2015  )
+*  Data:   20:29:15.2680503 03/06/2017 00:00:00
+*  Server IP:   10.200.2.133
+*  v2.05.03 2015-02-12 - Link para sibe BEC e do Governo do Estado de São Paulo
+-->
+<link href='https://www.bec.sp.gov.br//becsp/_css/BECHome.css'     rel='stylesheet' type='text/css' />
+
+ 
+<link   href='https://www.bec.sp.gov.br//becsp/_css/Cabec.css' rel='stylesheet'  type='text/css' />
+<link   href='https://www.bec.sp.gov.br//becsp/favicon.ico' rel='shortcut icon' type='/images/x-icon'  >
+<script  src='https://www.bec.sp.gov.br//becsp/_JScript_Banner/jquery.tools.min.js' type='text/javascript' ></script>
+<script  src='https://www.bec.sp.gov.br//becsp/_css/Acessibilidade/Acessibilidade.js' type='text/javascript' ></script>
+<div id='barrasp_global'>
+	<div id='barrasp_nav'>
+		<ul>
+			<li><a href='http://www.saopaulo.sp.gov.br/'>Portal do Governo</a></li>
+			<li><a href='http://www.cidadao.sp.gov.br/'>Cidadão.SP</a></li>
+			<li><a href='http://www.investimentos.sp.gov.br/'>Investimentos.SP</a></li>
+		</ul>
+		<select id='menu-destaques' onChange='location = options[selectedIndex].value'>
+			<option value='#' selected>Destaques</option>
+			<option value='http://www.saopaulo.sp.gov.br/sis/noticias.asp'>SP Notícias</option>
+			<option value='http://www.poupatempo.sp.gov.br/'>Poupatempo</option>
+			<option value='http://www.acessasaopaulo.sp.gov.br/'>Acessa São Paulo</option>
+			<option value='http://www.cidadao.sp.gov.br/link/?serv=1009/'>Licitações</option>
+			<option value='#'>---------------------------------</option>
+			<option value='#'>Secretarias:</option>
+			<option value='http://www.sap.sp.gov.br/'>- Administração Penitenciária</option>
+			<option value='http://www.agricultura.sp.gov.br/'>- Agricultura e Abastecimento</option>
+			<option value='http://www.desenvolvimentosocial.sp.gov.br/'>- Assistência e Desenvolvimento Social</option>
+			<option value='http://www.casacivil.sp.gov.br/'>- Casa Civil</option>
+			<option value='http://www.casamilitar.sp.gov.br/'>- Casa Militar</option>
+			<option value='http://www.saopaulo.sp.gov.br/linha/sec_comunic.htm'>- Comunicação</option>
+			<option value='http://www.cultura.sp.gov.br/'>- Cultura</option>
+			<option value='http://www.desenvolvimento.sp.gov.br/'>- Desenvolvimento</option>
+			<option value='http://www.planejamento.sp.gov.br/'>- Economia e Planejamento</option>
+			<option value='http://www.educacao.sp.gov.br/'>- Educação</option>
+			<option value='http://www.emprego.sp.gov.br/'>- Emprego e Relações do Trabalho</option>
+			<option value='http://www.saopaulo.sp.gov.br/linha/sec_ensinosup.htm'>- Ensino Superior</option>
+			<option value='http://www.sejel.sp.gov.br/'>- Esporte e Lazer</option>
+			<option value='http://www.fazenda.sp.gov.br/'>- Fazenda</option>
+			<option value='http://www.saopaulo.sp.gov.br/linha/sec_gestao.htm'>- Gestão Pública</option>
+			<option value='http://www.habitacao.sp.gov.br/'>- Habitação</option>
+			<option value='http://www.justica.sp.gov.br/'>- Justiça e Defesa da Cidadania</option>
+			<option value='http://www.ambiente.sp.gov.br/'>- Meio Ambiente</option>
+			<option value='http://www.pge.sp.gov.br/'>- Procuradoria Geral do Estado</option>
+			<option value='http://www.saopaulo.sp.gov.br/linha/sec_rel_inst.htm'>- Relações Institucionais</option>
+			<option value='http://www.energia.sp.gov.br/'>- Saneamento e Energia</option>
+			<option value='http://www.saude.sp.gov.br/'>- Saúde</option>
+			<option value='http://www.ssp.sp.gov.br/'>- Segurança Pública</option>
+			<option value='http://www.transportes.sp.gov.br/'>- Transportes</option>
+			<option value='http://www.stm.sp.gov.br/'>- Transportes Metropolitanos</option>
+		</select>
+		<h1 id='barrasp_logo'>
+			<a href='http://www.saopaulo.sp.gov.br/' title='Governo do Estado de São Paulo'></a>
+		</h1>
+	</div>
+</div>
+<link href='https://www.bec.sp.gov.br//becsp/images/CabecV1/becico.ico' rel='shortcut icon' />
+ 
+<meta content='no-cache' http-equiv='Pragma' />
+<!-- **************************************************************************************************** -->
+
+<div id='global'>
+  <div id='header'>
+      <h3 id='logo'>
+          <a href='/BECSP/Home/Home.aspx' title='Bolsa Eletrônica de Compras'></a>
+      </h3>
+  </div>
+  <ul id='navbar'>
+  </ul>
+</div>
+<table border='0' cellpadding='0' cellspacing='0' width='100%' id='tempo'>
+    <tr>
+        <td width='33%' height='30'>
+                  <font style='font-weight:bold;font-size:15px;'>&nbsp;</font> 
+        </td>
+        <td width='33%'>
+        </td>
+        <td>
+                  <div id='hora2' class='relogio'></div>        </td>
+    </tr>
+</table>
+
+ 
+<SCRIPT language='JavaScript'>
+     var hours, minutes, seconds;
+     var intHours	= 20;
+     var intMinutes	= 29;
+     var intSeconds	= 06;
+</SCRIPT>
+ <script src='https://www.bec.sp.gov.br//becsp/Clock Menu/JScript_Relogio.js'  type='text/javascript' ></script>
+
+ 
+
+<script src="https://www.bec.sp.gov.br//becsp/_Scripts/coolmenus4.js"  type="text/javascript" ></script>
+<script src="https://www.bec.sp.gov.br//becsp/_Scripts/JSMenu.js"      type="text/javascript" ></script>
+<link  href="https://www.bec.sp.gov.br//becsp/_Scripts/JSMenu.css"     rel="stylesheet" type="text/css" />
+<script language="javascript">
+oCMenu.makeMenu("1001","","Mural","https://www.bec.sp.gov.br/Publico/aspx/MuralOC.aspx?chave=")
+oCMenu.makeMenu("100105","1001","Sistema BEC/SP","https://www.bec.sp.gov.br/publico/aspx/home.aspx?chave=")
+oCMenu.makeMenu("100110","1001","Oferta de Compra","https://www.bec.sp.gov.br/Publico/aspx/MuralOC.aspx?chave=")
+oCMenu.makeMenu("10011010","100110","Convite Eletrônico","http://www.bec.sp.gov.br/BEC_Convite_UI/ui/BEC_CV_Pesquisa.aspx?chave=")
+oCMenu.makeMenu("1001101004","100110","Dispensa de Licitação - Cotações.","http://www.bec.sp.gov.br/BEC_Dispensa_UI/ui/BEC_DL_Pesquisa.aspx?chave=")
+oCMenu.makeMenu("10011030","100110","Pregão suspenso","https://www2.bec.sp.gov.br/bec_pregao_UI/OC/Pregao_OC_Suspensa.aspx?chave=")
+oCMenu.makeMenu("100112","1001","Pesquisa Unidade Compradora","http://www.bec.sp.gov.br/BECSP/UGE/UgePesquisa.aspx?chave=")
+oCMenu.makeMenu("100117","1001","Login de usuário","https://www.bec.sp.gov.br/compartilhado_ui/Login/Login.aspx?chave=")
+oCMenu.makeMenu("100118","1001","Login CAUFESP","https://www.bec.sp.gov.br/BEC_Acesso_UI/Login/ui_login.aspx?chave=")
+oCMenu.makeMenu("1002","","Legislação","http://www.bec.sp.gov.br/becsp/Legislacao/UI_Selecao.aspx?chave=")
+oCMenu.makeMenu("1069","","Minutas Edital","https://www.bec.sp.gov.br/becsp/Aspx/Minutas.aspx?chave=")
+oCMenu.makeMenu("1070","","Fornecedores")
+oCMenu.makeMenu("1071","","Catálogo")
+oCMenu.makeMenu("10710","1071","Materiais")
+oCMenu.makeMenu("10711","1071","Serviços")
+oCMenu.makeMenu("10712","10710","Consulta Itens","http://www.bec.sp.gov.br/BEC_Catalogo_UI/CatalogoPesquisaApresentacao.aspx?chave=")
+oCMenu.makeMenu("10715","10711","Consulta Itens","https://www.bec.sp.gov.br/BEC_Servicos_UI/V2/UI_sconsAvancada_V2.aspx?chave=")
+oCMenu.makeMenu("10721","1070","Negociações","https://www.bec.sp.gov.br/fornecedor_ui/LoginFornecedor.aspx?chave=")
+oCMenu.makeMenu("1085","","Comunicação")
+oCMenu.makeMenu("108510","1085","Perguntas frequentes","http://www.bec.sp.gov.br/FAQ_UI/FAQ.aspx?chave=")
+oCMenu.makeMenu("108520","1085","Fale Conosco","https://www.fazenda.sp.gov.br/email/default_new_bec.asp")
+oCMenu.makeMenu("108530","1085","Normas & Padrões","http://www.bec.sp.gov.br/becsp/Quem_Somos/normasepadroes.aspx?chave=")
+oCMenu.makeMenu("1089","1070","Cadastro/Atualização","https://www.bec.sp.gov.br/Caufesp/Publico/ComoCadastrar.aspx?chave=")
+oCMenu.makeMenu("1096000300","","Manuais","http://www.bec.sp.gov.br/becsp/Quem_Somos/downloads.aspx?chave=")
+oCMenu.makeMenu("1096000345","1096000300","Manuais BEC","/becsp/aspx/Downloads_Editais_Minuta_Antigo.aspx?chave=")
+oCMenu.makeMenu("1096000346","1096000300","Tutorial do Painel de Negociação do Fornecedor","http://www.bec.sp.gov.br/becsp/tutoriais/Console_2013b/Tutorial_Painel_Fornecedor.aspx?chave=")
+oCMenu.makeMenu("21007","100110","Pregão eletrônico","https://www2.bec.sp.gov.br/bec_pregao_UI/OC/pesquisa_publica.aspx?chave=")
+
+oCMenu.construct()</script>
+
+<!-- 
+*  ( V5.00.059 11/03/2015  )
+-->
+ 
+<asp:HiddenField  ID='serverDateTime' runat='server'/> 
+<style type='text/css'>#popx{display:none;z-index:100000;background-color:#ffffff;position:fixed;top:30%;left:50%;margin-left:-225px;width:550px;border:2px solid #316898;}#popx td{padding:7px;}#popx th{background-color:#316898;font-size:11px;text-decoration: none;padding:4px;}#popx th a{font-size:11px;text-decoration: none;}<style type='text/css'>.cssTextoSubTitulox{font-family:Arial;font-size:11px;font-weight:normal;color:#444444;text-decoration: none;}.cssTextoSubTitulox a:link{font-family:Arial;font-size:11px;font-weight:normal;color:#444444;text-decoration: none;}.cssTextoSubTitulox a:visited{font-family:Arial;font-size:11px;font-weight:normal;color:#444444;text-decoration: none;}.cssTextoPadraoDatax{font-family:Arial;font-size:10px;color:#777777;text-decoration: none;font-weight:normal;}.cssTextoPadraolinkx{font-family:Arial;font-size:10px;color:#316898;text-decoration: none ;font-weight:normal;}.cssTextoPadraolinkx a{font-family:Arial;font-size:10px;color:#316898;text-decoration: none ;font-weight:normal;}.cssTextoPadraolinkx a:visited{font-family:Arial;font-size:10px;color:#316898;text-decoration: none;font-weight:normal;}</style><table id='popx' border='0' width='100%'>
+<tr>
+     <th width='530'>
+         <center><b><font style='color:#ffffff;'>Comunicados Oficiais</font></b></center>
+     </th>
+     <th width='20' valign='middle' align='center'>
+         <a href="#" onclick="document.getElementById('popx').style.display='none'; clicado=0;"><font color='white'><b>X</b></font></a>
+     </th>
+</tr>
+<tr><td colspan=2><br>
+<span class='cssTextoSubTitulox'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=1017&ID_Perfil=1'><font color='Red'>EXPEDIENTE NO DIA 16/06/2017</font></A></span><br>
+<span class='cssTextoPadraolinkx'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=1017&ID_Perfil=1'>Expediente no dia 16/06/2017 - Governador dispõe sobre o expediente nas repartições públicas estaduais - Decreto 62.607/17.</A></span><br><br>
+<span class='cssTextoSubTitulox'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=1003&ID_Perfil=1'>PREGÃO NOVA FUNCIONALIDADE</A></span><br>
+<span class='cssTextoPadraolinkx'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=1003&ID_Perfil=1'>BEC inclui classificação de documentos nos Anexos de Habilitação</A></span><br><br>
+<span class='cssTextoSubTitulox'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=996&ID_Perfil=1'>PENALIDADE APLICADA À MATRIZ OU FILIAL</A></span><br>
+<span class='cssTextoPadraolinkx'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=996&ID_Perfil=1'>Penalidade aplicada atinge matriz ou filial  indistintamento</A></span><br><br>
+<span class='cssTextoSubTitulox'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=994&ID_Perfil=1'>ATENÇÃO! NOVAS FUNCIONALIDADES DO CONVITE ELETRÔNICO</A></span><br>
+<span class='cssTextoPadraolinkx'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=994&ID_Perfil=1'>Modernização e o Aprimoramento das funcionalidades do Convite Eletrônico</A></span><br><br>
+<span class='cssTextoSubTitulox'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=992&ID_Perfil=1'>INCLUSÃO DE NOVAS MINUTAS NO MÓDULO “MINUTAS ESPECÍFICAS”</A></span><br>
+<span class='cssTextoPadraolinkx'><A href='http://www.bec.sp.gov.br/becsp/Noticias/UI_Noticia.aspx?chave=&ID_NOTICIA=992&ID_Perfil=1'>Inclusão de novas minutas no módulo “MINUTAS ESPECÍFICAS”</A></span><br><br>
+</td></tr>
+</table>
+<div id='divisao'></div>
+</span>
+                    <br />                
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="3">
+                    
+                    <table width="100%">
+	                    <tr>
+		                    <td>
+			                    <div class="divTela" id="divTela">
+				                    <div class="negrito_preto">
+                                        
+    
+    
+    <table width="100%">
+        <tr>
+            <td rowspan="4" style="width:5%" align="center"><span id="ctl00_DetalhesOfertaCompra1_lbl_logo"></span></td>
+            <td align="left">
+                <span id="ctl00_DetalhesOfertaCompra1_Label7" class="campo">Número da OC </span>
+                <span id="ctl00_DetalhesOfertaCompra1_txtOC" class="texto_destaque">180137000012017OC00039</span>
+                <br />
+            </td>
+            <td align="right">
+                <span id="ctl00_DetalhesOfertaCompra1_lblEnte" class="campo" style="display:inline-block;">Ente Federativo</span>
+                <span id="ctl00_DetalhesOfertaCompra1_txtDescricaoEnteFederativo" class="texto_destaque"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <span id="ctl00_DetalhesOfertaCompra1_lblStatus" class="campo" style="display:inline-block;">Situação</span>
+                <span id="ctl00_DetalhesOfertaCompra1_txtStatus" class="texto_destaque">Encerrada</span>
+            </td>
+            <td  align="right">
+                <span id="ctl00_DetalhesOfertaCompra1_Label6" class="campo" style="display:inline-block;">UC</span>
+                <span id="ctl00_DetalhesOfertaCompra1_txtNomUge" class="texto_destaque">DELEG.SECC.POLICIA DE REGISTRO</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <span id="ctl00_DetalhesOfertaCompra1_lblPerCotEletronica" class="campo" style="display:inline-block;">Período fixo de cotação eletrônica</span>
+                <span id="ctl00_DetalhesOfertaCompra1_txtPerCotEletronica" class="texto_destaque">02/06/2017 às 14:11:00 a 02/06/2017 às 14:26:00</span>
+            </td>
+            <td  align="right">
+                &nbsp;</td>
+        </tr>
+    </table>    
+                                    </div>
+			                    </div>
+		                    </td>
+	                    </tr>
+                    </table>         
+
+                    <table width="100%">
+                        <tr>
+                            <td colspan="2">
+                                
+<style type="text/css"><!--body {behavior:url(cssHoverFix.htc);}--></style>
+
+<script type="text/JavaScript">
+function Menu_Mostra(elmnt)
+{
+    if(document.getElementById(elmnt) != null)
+	    document.getElementById(elmnt).style.display="block";
+}
+function Menu_Esconde(elmnt)
+{
+    if(document.getElementById(elmnt) != null) 
+        document.getElementById(elmnt).style.display="none";
+}
+</script>
+
+<span id="ctl00_wuc_Menu_Aba1_lb_Menu">
+
+<div id="menuPregao"><ul id="topMenu">
+
+<li OnMouseOver="Menu_Mostra('_19')" OnMouseOut="Menu_Esconde('_19')"><a href="BEC_DL_Edital.aspx?chave=&OC=B5QTJFaErQ5iX8OiiiFYjsHtgAcsNbhMWChWG%2bVEwwXOXXMFjHzAXwc50G0bTP%2fd&CA=">Edital</a></li>
+
+<li class="selecionado" OnMouseOver="Menu_Mostra('_22')" OnMouseOut="Menu_Esconde('_22')"><a href="BEC_DL_OC_ITEM.aspx?chave=&OC=B5QTJFaErQ5iX8OiiiFYjsHtgAcsNbhMWChWG%2bVEwwXOXXMFjHzAXwc50G0bTP%2fd&CA=">Dispensa de Licitação</a></li>
+
+<li OnMouseOver="Menu_Mostra('_23')" OnMouseOut="Menu_Esconde('_23')"><a href="BEC_DL_Gestao_Prazos.aspx?chave=&OC=B5QTJFaErQ5iX8OiiiFYjsHtgAcsNbhMWChWG%2bVEwwXOXXMFjHzAXwc50G0bTP%2fd&CA=">Gestão de Prazos</a></li>
+
+</ul></div></span>
+<div id="linha1"></div>
+<div id="linha2"></div>
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td align="right">                                
+
+                                
+                            </td>
+                            <td style="width: 120px" >
+                                <span>
+                                
+                                </span>
+                            </td>
+                        </tr>
+                    </table>  
+                    <div id="ctl00_updPanel">
+	
+                            <div id="pPrincipal">
+                                
+    <head>
+<link rel="stylesheet" type="text/css" href="../_css/StyleSheetCatalogo.css">
+<link rel="stylesheet" type="text/css" href="../_css/StyleSheet_Catalogo2011.css">
+
+<link   rel="stylesheet" href="../_MenuConsole/Console_css3-buttons.css" type="text/css"  media="screen">
+<script                   src="../_MenuConsole/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        // Toggle the dropdown menu's
+        $(".dropdown .button, .dropdown button").click(function() {
+            if (!$(this).find('span.toggle').hasClass('active')) {
+                $('.dropdown-slider').slideUp();
+                $('span.toggle').removeClass('active');
+            }
+
+            // open selected dropown
+            $(this).parent().find('.dropdown-slider').slideToggle('fast');
+            $(this).find('span.toggle').toggleClass('active');
+
+            return false;
+        });
+
+        // Launch TipTip tooltip
+        $('.tiptip a.button, .tiptip button').tipTip();
+
+    });
+
+    // Close open dropdown slider by clicking elsewhwere on page
+    $(document).bind('click', function(e) {
+        if (e.target.id != $('.dropdown').attr('class')) {
+            $('.dropdown-slider').slideUp();
+            $('span.toggle').removeClass('active');
+        }
+    });
+</script>
+
+</head>
+    
+    <div id="ctl00_c_area_conteudo_upd_pnl_tabs">
+		
+            <table width="100%">
+                
+                  <tr>
+                        <td align="left">
+                        <input type="submit" name="ctl00$c_area_conteudo$btn331000" value="Itens em Negociação" id="ctl00_c_area_conteudo_btn331000" />
+                        <input type="submit" name="ctl00$c_area_conteudo$btn33102" value="Acompanhar lances" id="ctl00_c_area_conteudo_btn33102" />
+                        
+                        <input type="submit" name="ctl00$c_area_conteudo$btn33105" value="Detalhe do item" id="ctl00_c_area_conteudo_btn33105" />
+                        
+
+                        </td>
+                    </tr>
+                
+                <tr>
+                    <td style="width: 150px">
+
+                        
+                    </td>
+                </tr>
+            </table>        
+        
+	</div>
+    
+    <div id="ctl00_c_area_conteudo_upd_tab_Container">
+		
+         
+            <div id="ctl00_c_area_conteudo_tb_pnl_list_itens">
+			
+            
+    <script src= "../_Scripts/Pregao.js" language="jscript" type="text/jscript"></script>
+    <script src= "../_Scripts/Function.js" language="jscript" type="text/jscript"></script>
+   <script  type="text/javascript">
+   function CheckOtherIsCheckedByGVID(spanChk)
+
+       {            
+
+           var IsChecked = spanChk.checked;        
+
+           if(IsChecked)
+
+              {
+
+                  spanChk.parentElement.parentElement.style.backgroundColor = '#B0E2FF'; 
+
+               spanChk.parentElement.parentElement.style.color='black';
+
+              }                   
+
+           var CurrentRdbID = spanChk.id;   
+
+           var Chk = spanChk;
+
+              Parent = document.getElementById('ctl00_c_area_conteudo_wuc_OC_ITEM_LANCE_DISPENSA1_dtgItens');         
+              var items = Parent.getElementsByTagName('input');            
+
+
+              for(i=0;i<items.length;i++)
+
+              {               
+
+                  if(items[i].id != CurrentRdbID && items[i].type=="radio")
+
+                  {           
+
+                      if(items[i].checked)
+
+                      {    
+
+                          items[i].checked = false;
+
+items[i].parentElement.parentElement.style.backgroundColor='white';
+
+items[i].parentElement.parentElement.style.color='black';                     }
+
+                  }
+
+              }
+
+       }
+   </script>
+
+        <div id="wuc_OC_ITEM_LANCE_DISPENSA">
+            <div>
+				<table class="GridPregaoV2" cellspacing="0" cellpadding="4" rules="cols" bordercolor="#DEDFDE" border="1" id="ctl00_c_area_conteudo_wuc_OC_ITEM_LANCE_DISPENSA1_dtgItens" bgcolor="White" width="100%">
+					<tr bgcolor="#6B696B">
+						<th scope="col"><font color="White"><b>&nbsp;</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Item</b></font></th><th scope="col"><font color="White"><b>&nbsp;</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>C&#243;digo</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Descri&#231;&#227;o Resumida</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Qtde.</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Unidade de Fornecimento</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Melhor Oferta</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Marca</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>CNPJ</b></font></th><th align="center" scope="col"><font face="Arial" color="White" size="1"><b>Raz&#227;o Social</b></font></th>
+					</tr><tr bgcolor="#F7F7DE">
+						<td><font color="Black">
+                            <input id="ctl00_c_area_conteudo_wuc_OC_ITEM_LANCE_DISPENSA1_dtgItens_ctl02_rdbGVRow" type="radio" name="ctl00$c_area_conteudo$wuc_OC_ITEM_LANCE_DISPENSA1$dtgItens$ctl02$rdbGVRow" value="rdbGVRow" checked="checked" onclick="javascript:CheckOtherIsCheckedByGVID(this);" />
+                        </font></td><td><font face="Arial" color="Black" size="1">1</font></td><td><font color="Black">
+                            
+                        </font></td><td><font face="Arial" color="Black" size="1">2803313</font></td><td><font face="Arial" color="Black" size="1">Cartucho de tinta hp, compativel com deskjet d13301360/1455/2330</font></td><td align="center"><font face="Arial" color="Black" size="1">60</font></td><td><font face="Arial" color="Black" size="1">Unidade</font></td><td align="right"><font face="Arial" color="Black" size="1">13,0000</font></td><td width="120"><font face="Arial" color="Black" size="1">PRINT JET</font></td><td width="120"><font face="Arial" color="Black" size="1">26065427000161</font></td><td width="120"><font face="Arial" color="Black" size="1">IMPORT PRINT CARTRIGE SUPRIMENTOS EIRELI-ME</font></td>
+					</tr>
+				</table>
+			</div>
+            &nbsp;
+            </div>
+
+  
+            
+		</div>
+            
+            <div id="ctl00_c_area_conteudo_tb_pnl_det_item">
+			
+                       
+            
+		</div>                                    
+                        
+            
+            <div id="ctl00_c_area_conteudo_tb_pnl_acm_lances">
+			
+            
+            
+		</div>
+            
+            
+            
+            
+            
+            <div id="ctl00_c_area_conteudo_pnl_legenda">
+			
+	            <table cellspacing="0" cellpadding="0" border="0">
+		            <tr>
+			            <td valign="top" align="left" width="200" colSpan="2" style="height: 13px">
+			                <label>Legendas</label>	   
+			            </td>
+		            </tr>
+		            <tr>
+			            <td>
+				            <img alt="_IMAGEM_" src="../Images/d.gif" /><label>Deserto</label>
+			            </td>
+		            </tr>
+		            <tr>
+			            <td>
+				            <img alt="_IMAGEM_" src="../Images/f.gif"/><label>Fracassado</label>
+			            </td>
+		            </tr>
+	            </table>    
+            
+		</div>            
+            
+        
+	</div>
+    
+ 
+
+                            </div>
+                            <div id="pRodape">
+                                
+                            </div>
+                        
+</div>               
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="3">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />                                        
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />                    
+                    <span id="ctl00_lb_Rodape"><div id='footer'>
+	 <address>Secretaria da Fazenda do Estado de São Paulo Av. Rangel Pestana, 300 - São Paulo - SP - CEP.01017-911 - PABX 	(11)3243-3400</address>
+</div>
+</span>                
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        
+        
+        
+        </table>
+    </form>
+</body>
+</html>
