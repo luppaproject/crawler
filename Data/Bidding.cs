@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Luppa.Data
@@ -10,22 +11,25 @@ namespace Luppa.Data
         [BsonElement("manufacturer")]
         public string Manufacturer { get; set; }
 
-        [BsonElement("productName")]
-        public string ProductName { get; set; }
+        [BsonElement("productAlias")]
+        public string ProductAlias { get; set; }
 
-        [BsonElement("price")]
-        public decimal Price { get; set; }
+        [BsonElement("totalPrice")]
+        public double TotalPrice { get; set; }
 
         [BsonElement("crawlerPrice")]
-        public decimal CrawlerPrice { get; set; }
+        public double CrawlerPrice { get; set; }
 
         [BsonElement("quantity")]
-        public decimal Quantity { get; set; }
+        public double Quantity { get; set; }
 
         [BsonElement("orderType")]
         public string OrderType { get; set; }
 
         [BsonElement("score")]
-        public string Score { get; set; }
+        public double Score { get; set; }
+
+        [BsonElement("products")]
+        public List<Product> Products { get; set; } = new List<Product>();
     }
 }

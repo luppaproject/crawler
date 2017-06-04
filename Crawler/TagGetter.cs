@@ -19,7 +19,10 @@ namespace Luppa.Crawler
             else if (!string.IsNullOrEmpty(id)) 
                 pattern = $"<{tagName} .*?id=\"{id}\".*?>(.*?)<\\/{tagName}>";
 
-            MatchCollection matches = Regex.Matches(body.Replace("\r\n", ""), pattern);
+            var clearBody = body
+                .Replace("\r\n", "")
+                .Replace("\t", "");
+            MatchCollection matches = Regex.Matches(clearBody, pattern);
 
             if (matches.Count == 0)
                 return string.Empty;
@@ -27,11 +30,32 @@ namespace Luppa.Crawler
             return matches[0].Groups[1].Value;
         }
 
-        public static IEnumerable<string> ParseTableColumns(string tableColumns)
+        public static List<string> ParseTableColumns(string tableColumns)
         {
             string pattern = "<td.*?>(.*?)<\\/td>";
+            string fontPattern = "<font.*?>(.*?)<\\/font>";
+            var columns = new List<string>();
 
             var matches = Regex.Matches(tableColumns, pattern);
+
+            foreach (Match match in matches)
+            {
+                var fontMatches = Regex.Matches(match.Groups[1].Value, fontPattern);
+
+                if (fontMatches.Count > 0)
+                    columns.Add(fontMatches[0].Groups[1].Value.Trim());
+                else
+                    columns.Add(match.Groups[1].Value.Trim());
+            }
+
+            return columns;
+        }
+
+        public static IEnumerable<string> ParseTableRows(string tableRows)
+        {
+            string pattern = "<tr.*?>(.*?)<\\/tr>";
+
+            var matches = Regex.Matches(tableRows, pattern);
 
             foreach (Match match in matches)
             {

@@ -9,11 +9,11 @@ using MongoDB.Driver;
 
 namespace Luppa.Crawler
 {
-    public class BECCrawler
+    public class BuscapeCrawler
     {
         private MongoCollections collections;
 
-        public BECCrawler()
+        public BuscapeCrawler()
         {
             this.collections = new MongoCollections();
         }

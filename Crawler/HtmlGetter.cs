@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Luppa.Crawler
@@ -15,8 +17,7 @@ namespace Luppa.Crawler
 
                 var response = await httpClient.GetAsync(url);
                 var contents = await response.Content.ReadAsStringAsync();
-
-                File.AppendAllText("C:\\teste\\teste.txt", contents);
+                contents = WebUtility.HtmlDecode(contents);
 
                 return contents;
             }
