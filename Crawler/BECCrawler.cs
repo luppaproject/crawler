@@ -43,7 +43,7 @@ namespace Luppa.Crawler
             if (string.IsNullOrEmpty(biddindBody))
                 return new Bidding();
 
-            var bidding = new Bidding();
+            var bidding = new Bidding() { BiddingUrl = link.Url };
             var tableItems = TagGetter.GetValueFromTag(
                 body: biddindBody, 
                 tagName: "table", 
@@ -80,7 +80,7 @@ namespace Luppa.Crawler
                 bidding.ProductAlias = string.Join(", ", bidding.Products);
 
             bidding.OrderNumber = TagGetter.GetValueFromTag(biddindBody, "span", "ctl00_DetalhesOfertaCompra1_txtOC");
-            bidding.OrderType = "MATERIAL DE CONSUMO";
+            bidding.OrderType = "material_de_consumo";
 
             return bidding;
         }

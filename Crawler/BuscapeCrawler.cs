@@ -6,6 +6,8 @@ using System.Net;
 using System.Xml.Linq;
 using System.Linq;
 using MongoDB.Driver;
+using System.IO;
+using System;
 
 namespace Luppa.Crawler
 {
@@ -18,70 +20,55 @@ namespace Luppa.Crawler
             this.collections = new MongoCollections();
         }
 
-        public async Task ParseLinks(List<CrawlerLink> linkList)
+        public async Task ParseLinks(List<Bidding> biddings)
         {
-            Bidding bidding;
-
-            foreach (var link in linkList)
+            foreach (var bidding in biddings)
             {
-                bidding = await ParseLink(link);
+                var newBidding = await ParseLink(bidding);
 
-                if (bidding != null)
-                {
-                    if (bidding.Products.Count > 0)
-                        await collections.Bidding.InsertOneAsync(bidding);
-
-                    await CloseLink(link);
-                }
+                await collections
+                    .Bidding
+                    .ReplaceOneAsync(
+                        Builders<Bidding>.Filter.Eq(t => t.Id, newBidding.Id),
+                        newBidding
+                    );
             }    
         }
 
-        private async Task<Bidding> ParseLink(CrawlerLink link)
+        private async Task<Bidding> ParseLink(Bidding bidding)
         {
-            var biddindBody = await HtmlGetter.GetBodyFrom(link.Url);
-            
-            if (string.IsNullOrEmpty(biddindBody))
-                return new Bidding();
+            bidding.Score = 0;
+            bidding.CrawlerPrice = 0;
 
-            var bidding = new Bidding();
-            var tableItems = TagGetter.GetValueFromTag(
-                body: biddindBody, 
-                tagName: "table", 
-                id: "ctl00_c_area_conteudo_wuc_OC_ITEM_LANCE_DISPENSA1_dtgItens"
-            );
-            var itemsRows = TagGetter.ParseTableRows(tableItems).ToList();
-            var itemColumns = new List<string>();
-
-            foreach (var row in itemsRows)
+            foreach (var product in bidding.Products)
             {
-                itemColumns = new List<string>();
-                itemColumns.AddRange(TagGetter.ParseTableColumns(row));
+                product.CrawlerPrice = 0;
+                product.TotalCrawlerPrice = 0;
 
-                if (itemColumns.Count == 0 || itemColumns[2].Contains("img"))
+                var buscapeLink = $"http://www.buscape.com.br/produtos?produto={product.ProductName}";
+                var productBody = await HtmlGetter.GetBodyFrom(buscapeLink);
+
+                if (string.IsNullOrEmpty(productBody) || productBody.Contains("Não era o que você procurava?"))
                     continue;
 
-                var product = new Product
-                {
-                    ProductName = itemColumns[4],
-                    Quantity = double.Parse(itemColumns[5]),
-                    Price = double.Parse(itemColumns[7]),
-                    Manufacturer = itemColumns[10]
-                };
+                var mostRelevantProduct = TagGetter.GetValueFromTag(
+                    body: productBody,
+                    tagName: "span",
+                    query: ".*?class=\"bui-price__value.*?\""
+                );
 
-                product.TotalPrice = product.Quantity * product.Price;
-                bidding.Manufacturer = product.Manufacturer;
-                bidding.TotalPrice += product.TotalPrice;
-                bidding.Quantity += product.Quantity;
+                if (string.IsNullOrEmpty(mostRelevantProduct))
+                    continue;
 
-                bidding.Products.Add(product);
+                product.CrawlerUrl = buscapeLink;
+                product.CrawlerPrice = double.Parse(mostRelevantProduct.Replace("R$", "").Trim());
+                product.TotalCrawlerPrice = product.CrawlerPrice * product.Quantity;
+                bidding.CrawlerPrice += product.TotalCrawlerPrice;
             }
 
-            if (bidding.Products.Count > 0)
-                bidding.ProductAlias = string.Join(", ", bidding.Products);
-
-            bidding.OrderNumber = TagGetter.GetValueFromTag(biddindBody, "span", "ctl00_DetalhesOfertaCompra1_txtOC");
-            bidding.OrderType = "MATERIAL DE CONSUMO";
-
+            if (bidding.CrawlerPrice > 0)
+                bidding.Score = Math.Round(((bidding.TotalPrice - bidding.CrawlerPrice) / bidding.CrawlerPrice) * 100, 2);
+            
             return bidding;
         }
 

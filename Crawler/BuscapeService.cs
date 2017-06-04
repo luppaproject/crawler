@@ -10,12 +10,12 @@ namespace Luppa.Crawler
         {
             var mongoCollection = new MongoCollections();
 
-            var urls = await mongoCollection
-                .CrowlerLink
-                .Find(t => t.IsBecParsed && !t.IsBuscapeParsed)
+            var biddings = await mongoCollection
+                .Bidding
+                .Find(t => t.CrawlerPrice == 0)
                 .ToListAsync();
 
-            await new BuscapeCrawler().ParseLinks(urls);
+            await new BuscapeCrawler().ParseLinks(biddings);
         }
     }
 }

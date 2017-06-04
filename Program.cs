@@ -10,7 +10,8 @@ namespace Luppa
     {
         static void Main(string[] args)
         {
-            var crowler = args.Length > 0 ? args[0] : "bec";
+            // var crowler = args.Length > 0 ? args[0] : "bec";
+            var crowler = "buscape";
 
             Console.WriteLine("Starting crowler");
 

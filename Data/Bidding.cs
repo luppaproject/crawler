@@ -26,6 +26,9 @@ namespace Luppa.Data
         [BsonElement("orderType")]
         public string OrderType { get; set; }
 
+        [BsonElement("biddingUrl")]
+        public string BiddingUrl { get; set; }
+
         [BsonElement("score")]
         public double Score { get; set; }
 

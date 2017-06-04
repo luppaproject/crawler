@@ -24,6 +24,8 @@ namespace Luppa.Crawler
                 .Replace("\t", "");
             MatchCollection matches = Regex.Matches(clearBody, pattern);
 
+            // System.IO.File.AppendAllText("C:\\teste\\teste.txt", clearBody);
+
             if (matches.Count == 0)
                 return string.Empty;
 
