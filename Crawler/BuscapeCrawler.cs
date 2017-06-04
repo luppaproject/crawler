@@ -24,14 +24,21 @@ namespace Luppa.Crawler
         {
             foreach (var bidding in biddings)
             {
-                var newBidding = await ParseLink(bidding);
+                try
+                {
+                    var newBidding = await ParseLink(bidding);
 
-                await collections
-                    .Bidding
-                    .ReplaceOneAsync(
-                        Builders<Bidding>.Filter.Eq(t => t.Id, newBidding.Id),
-                        newBidding
-                    );
+                    await collections
+                        .Bidding
+                        .ReplaceOneAsync(
+                            Builders<Bidding>.Filter.Eq(t => t.Id, newBidding.Id),
+                            newBidding
+                        );
+                }
+                catch (System.Exception e)
+                {
+                    System.Console.WriteLine(e?.Message ?? "Error unhandled");
+                }
             }    
         }
 
@@ -64,10 +71,13 @@ namespace Luppa.Crawler
                 product.CrawlerPrice = double.Parse(mostRelevantProduct.Replace("R$", "").Trim());
                 product.TotalCrawlerPrice = product.CrawlerPrice * product.Quantity;
                 bidding.CrawlerPrice += product.TotalCrawlerPrice;
+
+                if (product.CrawlerPrice > 0)
+                    product.Score = (int)Math.Round(((product.TotalPrice - product.TotalCrawlerPrice) / product.TotalCrawlerPrice) * 100, 0);
             }
 
             if (bidding.CrawlerPrice > 0)
-                bidding.Score = Math.Round(((bidding.TotalPrice - bidding.CrawlerPrice) / bidding.CrawlerPrice) * 100, 2);
+                bidding.Score = (int)Math.Round(((bidding.TotalPrice - bidding.CrawlerPrice) / bidding.CrawlerPrice) * 100, 0);
             
             return bidding;
         }

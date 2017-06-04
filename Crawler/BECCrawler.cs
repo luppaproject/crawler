@@ -80,7 +80,8 @@ namespace Luppa.Crawler
                 bidding.ProductAlias = string.Join(", ", bidding.Products);
 
             bidding.OrderNumber = TagGetter.GetValueFromTag(biddindBody, "span", "ctl00_DetalhesOfertaCompra1_txtOC");
-            bidding.OrderType = "material_de_consumo";
+            bidding.Entity = TagGetter.GetValueFromTag(biddindBody, "span", "ctl00_DetalhesOfertaCompra1_txtNomUge");
+            bidding.OrderType = "material-de-consumo";
 
             return bidding;
         }

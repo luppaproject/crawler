@@ -11,6 +11,9 @@ namespace Luppa.Data
         [BsonElement("manufacturer")]
         public string Manufacturer { get; set; }
 
+        [BsonElement("entity")]
+        public string Entity { get; set; }
+
         [BsonElement("productAlias")]
         public string ProductAlias { get; set; }
 
@@ -27,10 +30,10 @@ namespace Luppa.Data
         public string OrderType { get; set; }
 
         [BsonElement("biddingUrl")]
-        public string BiddingUrl { get; set; }
+        public string BiddingUrl { get; set; } = "";
 
         [BsonElement("score")]
-        public double Score { get; set; }
+        public int Score { get; set; }
 
         [BsonElement("products")]
         public List<Product> Products { get; set; } = new List<Product>();
