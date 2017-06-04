@@ -26,7 +26,7 @@ namespace Luppa.Data
         public double TotalPrice { get; set; }
         
         [BsonElement("crawlerUrl")]
-        public string CrawlerUrl { get; set; }
+        public string CrawlerUrl { get; set; } = "";
         
         [BsonElement("totalCrawlerPrice")]
         public double TotalCrawlerPrice { get; set; }

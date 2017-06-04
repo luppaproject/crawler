@@ -22,9 +22,11 @@ namespace Luppa
                 //     Task.WaitAll(new ListService().StartCrawler());
                 //     break;
                 case "buscape":
+                    System.Console.WriteLine("Starting buscape crawling...");
                     Task.WaitAll(new BuscapeService().StartCrawler());
                     break;
                 default:
+                    System.Console.WriteLine("Starting bec crawling...");
                     Task.WaitAll(new CrawlerService().StartCrawler());
                     break;
             }

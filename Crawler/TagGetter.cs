@@ -29,6 +29,7 @@ namespace Luppa.Crawler
             if (matches.Count == 0)
                 return string.Empty;
 
+            return Regex.Replace(matches[0].Groups[1].Value, @"<!--.*?-->", "");
             return matches[0].Groups[1].Value;
         }
 

@@ -22,6 +22,8 @@ namespace Luppa.Crawler
 
         public async Task ParseLinks(List<Bidding> biddings)
         {
+            System.Console.WriteLine($"{biddings.Count} items to parse.");
+
             foreach (var bidding in biddings)
             {
                 try
@@ -52,11 +54,45 @@ namespace Luppa.Crawler
                 product.CrawlerPrice = 0;
                 product.TotalCrawlerPrice = 0;
 
-                var buscapeLink = $"http://www.buscape.com.br/produtos?produto={product.ProductName}";
-                var productBody = await HtmlGetter.GetBodyFrom(buscapeLink);
+                System.Console.WriteLine($"Parsing {product.ProductName}...");
 
-                if (string.IsNullOrEmpty(productBody) || productBody.Contains("Não era o que você procurava?"))
+                var buscapeLink = $"http://www.buscape.com.br/produtos?produto={product.ProductName}";
+                var productBody = string.Empty;
+
+                product.CrawlerUrl = buscapeLink;
+
+                try
+                {
+                    productBody = await HtmlGetter.GetBodyFrom(product.CrawlerUrl);
+
+                    if (string.IsNullOrEmpty(productBody) || productBody.Contains("Não era o que você procurava?"))
+                    {
+                        // If "ref" exists, search by "ref"
+                        if (!product.ProductName.Contains("ref.") && !product.ProductName.Contains("ref:"))
+                            continue;
+
+                        var refSplit = product
+                            .ProductName
+                            .Substring(product
+                                .ProductName
+                                .IndexOf("ref")
+                            )
+                            .Split(new char[]{ ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        
+                        if (refSplit.Count() < 2)
+                            continue;
+                        
+                        var refNumber = refSplit[1];
+
+                        product.CrawlerUrl = $"http://www.buscape.com.br/produtos?produto={refNumber}";
+                        productBody = await HtmlGetter.GetBodyFrom(product.CrawlerUrl);
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    System.Console.WriteLine(e?.Message);
                     continue;
+                }
 
                 var mostRelevantProduct = TagGetter.GetValueFromTag(
                     body: productBody,
@@ -65,10 +101,31 @@ namespace Luppa.Crawler
                 );
 
                 if (string.IsNullOrEmpty(mostRelevantProduct))
+                {
+                    mostRelevantProduct = TagGetter.GetValueFromTag(
+                        body: productBody,
+                        tagName: "span",
+                        query: ".*?data-reactid=\"80\""
+                    );
+                }
+
+                if (string.IsNullOrEmpty(mostRelevantProduct))
+                {
+                    mostRelevantProduct = TagGetter.GetValueFromTag(
+                        body: productBody,
+                        tagName: "span",
+                        query: ".*?class=\"featured-price__highlight\""
+                    );
+                }
+
+                if (string.IsNullOrEmpty(mostRelevantProduct))
+                    continue;
+                
+                var crawlerPrice = 0d;
+                if (!double.TryParse(mostRelevantProduct.Replace("R$", "").Trim(), out crawlerPrice))
                     continue;
 
-                product.CrawlerUrl = buscapeLink;
-                product.CrawlerPrice = double.Parse(mostRelevantProduct.Replace("R$", "").Trim());
+                product.CrawlerPrice = crawlerPrice;
                 product.TotalCrawlerPrice = product.CrawlerPrice * product.Quantity;
                 bidding.CrawlerPrice += product.TotalCrawlerPrice;
 
