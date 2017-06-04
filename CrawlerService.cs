@@ -13,7 +13,7 @@ namespace Luppa
             var mongoCollection = new MongoCollections();
 
             var urls = await mongoCollection
-                .CrowlerLink
+                .CrawlerLink
                 .Find(t => !t.IsBecParsed)
                 .ToListAsync();
 

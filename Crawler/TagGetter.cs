@@ -24,13 +24,30 @@ namespace Luppa.Crawler
                 .Replace("\t", "");
             MatchCollection matches = Regex.Matches(clearBody, pattern);
 
-            // System.IO.File.AppendAllText("C:\\teste\\teste.txt", clearBody);
-
             if (matches.Count == 0)
                 return string.Empty;
 
             return Regex.Replace(matches[0].Groups[1].Value, @"<!--.*?-->", "");
-            return matches[0].Groups[1].Value;
+        }
+
+        public static string GetAttrFromTag(
+            string body,
+            string tagName,
+            string id,
+            string tagToGet)
+        {
+            var pattern = $"<{tagName} (.*?).*?id=\"{id}\".*?>.*?<\\/{tagName}>";
+
+            var clearBody = body
+                .Replace("\r\n", "")
+                .Replace("\t", "");
+
+            MatchCollection matches = Regex.Matches(clearBody, pattern);
+
+            if (matches.Count == 0)
+                return string.Empty;
+
+            return "";
         }
 
         public static List<string> ParseTableColumns(string tableColumns)

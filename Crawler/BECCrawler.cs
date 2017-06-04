@@ -91,7 +91,7 @@ namespace Luppa.Crawler
             link.IsBecParsed = true;
 
             await collections
-                .CrowlerLink
+                .CrawlerLink
                 .ReplaceOneAsync(Builders<CrawlerLink>.Filter.Eq(t => t.Id, link.Id), link);
         }
     }

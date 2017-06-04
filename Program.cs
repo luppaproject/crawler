@@ -10,17 +10,15 @@ namespace Luppa
     {
         static void Main(string[] args)
         {
-            //var crowler = args.Length > 0 ? args[0] : "bec";
-            var crowler = "buscape";
-            // var crowler = "lista";
+            var crowler = args.Length > 0 ? args[0] : "bec";
 
             Console.WriteLine("Starting crowler");
 
             switch (crowler)
             {
-                // case "lista":
-                //     Task.WaitAll(new ListService().StartCrawler());
-                //     break;
+                case "lista":
+                    Task.WaitAll(new ListService().StartCrawler());
+                    break;
                 case "buscape":
                     System.Console.WriteLine("Starting buscape crawling...");
                     Task.WaitAll(new BuscapeService().StartCrawler());

@@ -86,6 +86,9 @@ namespace Luppa.Crawler
 
                         product.CrawlerUrl = $"http://www.buscape.com.br/produtos?produto={refNumber}";
                         productBody = await HtmlGetter.GetBodyFrom(product.CrawlerUrl);
+
+                        if (string.IsNullOrEmpty(productBody))
+                            continue;
                     }
                 }
                 catch (System.Exception e)
@@ -133,6 +136,12 @@ namespace Luppa.Crawler
                     product.Score = (int)Math.Round(((product.TotalPrice - product.TotalCrawlerPrice) / product.TotalCrawlerPrice) * 100, 0);
             }
 
+            // Total only when CrawlerPrice > 0
+            bidding.TotalPrice = bidding
+                .Products
+                .Where(t => t.CrawlerPrice > 0)
+                .Sum(t => t.TotalPrice);
+
             if (bidding.CrawlerPrice > 0)
                 bidding.Score = (int)Math.Round(((bidding.TotalPrice - bidding.CrawlerPrice) / bidding.CrawlerPrice) * 100, 0);
             
@@ -144,7 +153,7 @@ namespace Luppa.Crawler
             link.IsBecParsed = true;
 
             await collections
-                .CrowlerLink
+                .CrawlerLink
                 .ReplaceOneAsync(Builders<CrawlerLink>.Filter.Eq(t => t.Id, link.Id), link);
         }
     }

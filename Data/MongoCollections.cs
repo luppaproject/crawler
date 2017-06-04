@@ -18,6 +18,6 @@ namespace Luppa.Data
         }
 
         public IMongoCollection<Bidding> Bidding => database.GetCollection<Bidding>("biddings");
-        public IMongoCollection<CrawlerLink> CrowlerLink => database.GetCollection<CrawlerLink>("crawlerLinks");
+        public IMongoCollection<CrawlerLink> CrawlerLink => database.GetCollection<CrawlerLink>("crawlerLinks");
     }
 }
