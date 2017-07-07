@@ -50,19 +50,24 @@ namespace Luppa.Helpers
 
         public static async Task<string> PostAndGetRedirectUrl(
             string url, 
-            Dictionary<string, string> formUrlContent)
+            Dictionary<string, string> formUrlContent,
+            bool encodeKey = false)
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = new HttpClient(new HttpClientHandler { AllowAutoRedirect = false }))
             {
                 var formList = new List<string>();
 
                 foreach (var item in formUrlContent)
-                    formList.Add($"{item.Key}={WebUtility.UrlEncode(item.Value)}");
+                {
+                    if (encodeKey)
+                        formList.Add($"{WebUtility.UrlEncode(item.Key)}={WebUtility.UrlEncode(item.Value)}");
+                    else
+                        formList.Add($"{item.Key}={WebUtility.UrlEncode(item.Value)}");
+                }
 
                 var formBody = string.Join("&", formList);
                 var form = new StringContent(formBody, Encoding.UTF8, "application/x-www-form-urlencoded");
                 var response = await httpClient.PostAsync(url, form);
-                var contents = await response.Content.ReadAsStringAsync();
                 var redirectUrl = response.Headers.GetValues("Location").First();
 
                 return redirectUrl;

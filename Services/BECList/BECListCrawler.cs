@@ -13,6 +13,7 @@ namespace Luppa.Services.BECList
         private readonly IMongoCollections collections;
 
         private const string LIST_PAGE = "http://www.bec.sp.gov.br/BEC_Dispensa_UI/ui/BEC_DL_Pesquisa.aspx?chave=";
+        private const string BASE_URL = "http://www.bec.sp.gov.br";
 
         public BECListCrawler(IMongoCollections collections)
         {
@@ -74,7 +75,8 @@ namespace Luppa.Services.BECList
                 links.Add(
                     await HtmlGetter.PostAndGetRedirectUrl(
                         url: LIST_PAGE,
-                        formUrlContent: becListVM.GenerateFormData()
+                        formUrlContent: becListVM.GenerateFormData(),
+                        encodeKey: true
                     )
                 );
             }
@@ -163,8 +165,34 @@ namespace Luppa.Services.BECList
             // It may take some time to complete =)
             pageJustFinishedBidding = await HtmlGetter.PostBodyFrom(LIST_PAGE, becListVM.GenerateFormData());
 
+            document.LoadHtml(pageJustFinishedBidding);
+
             // Trick last time -.-
             SetBasicAttributes(document, becListVM);
+
+            // CT100 from script tag
+            becListVM.CT100ToolkitScript = document
+                .DocumentNode
+                .SelectNodes("//script")
+                .Where(script =>
+                    script.Attributes.Contains("src") && 
+                    script.Attributes["src"].Value.Contains("ctl00_ToolkitScriptManager1_HiddenField")
+                )?
+                .First()
+                .Attributes["src"]
+                .Value ?? "";
+
+            becListVM.AddicionalData.Remove("ctl00$c_area_conteudo$bt33022_Pesquisa");
+
+            if (!string.IsNullOrEmpty(becListVM.CT100ToolkitScript))
+            {
+                becListVM.CT100ToolkitScript = System.Net.WebUtility.UrlDecode(becListVM.CT100ToolkitScript);
+
+                becListVM.CT100ToolkitScript = becListVM
+                    .CT100ToolkitScript
+                    .Substring(becListVM.CT100ToolkitScript.IndexOf(";;AjaxControlToolkit"))
+                    .Trim();
+            }
 
             becListVM.FinalBodyString = pageJustFinishedBidding;
         }
