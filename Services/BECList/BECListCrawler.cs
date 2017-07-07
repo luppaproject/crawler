@@ -36,6 +36,14 @@ namespace Luppa.Services.BECList
 
              Console.ForegroundColor = ConsoleColor.Cyan;
              Console.WriteLine("4/4 - Easy part: save on database ;)");
+             await SaveLinks(links);
+        }
+
+        private async Task SaveLinks(IEnumerable<string> links)
+        {
+            await collections.CrawlerLink.InsertManyAsync(
+                links.Select(link => new CrawlerLink { Url = link })
+            );
         }
 
         private async Task<List<string>> CreateHtmlLinks(BECListViewStateModel becListVM)
@@ -61,24 +69,27 @@ namespace Luppa.Services.BECList
 
             // Well, go take a cofee :)
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            System.Console.WriteLine("Hey, what about drinking coffee. It may take a while ;)");
+            Console.WriteLine("Hey, what about drinking coffee. It may take a while ;)");
 
             var links = new List<string>();
+            var currentLink = string.Empty;
+            var total = biddingCodeList.Count();
 
             becListVM.EventTarget = "ctl00$c_area_conteudo$grdvOC_publico";
-            // becListVM.AddicionalData.Remove("ctl00$c_area_conteudo$bt33022_Pesquisa");
 
-            foreach (var biddingCode in biddingCodeList)
+            for (int i = 0; i < total; i++)
             {
-                becListVM.EventArgument = biddingCode;
+                Console.WriteLine($"Processing {i + 1} of {total}");
 
-                links.Add(
-                    await HtmlGetter.PostAndGetRedirectUrl(
-                        url: LIST_PAGE,
-                        formUrlContent: becListVM.GenerateFormData(),
-                        encodeKey: true
-                    )
+                becListVM.EventArgument = biddingCodeList.ElementAt(i);
+
+                currentLink = await HtmlGetter.PostAndGetRedirectUrl(
+                    url: LIST_PAGE,
+                    formUrlContent: becListVM.GenerateFormData(),
+                    encodeKey: true
                 );
+
+                links.Add($"{BASE_URL}{currentLink}");
             }
 
             return links;
