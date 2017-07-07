@@ -3,7 +3,7 @@ using MongoDB.Driver;
 
 namespace Luppa.Data
 {
-    public class MongoCollections
+    public class MongoCollections : IMongoCollections
     {
         private readonly IMongoDatabase database;
 

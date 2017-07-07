@@ -10,6 +10,7 @@
     <PackageReference Include="MongoDB.Driver.Core" Version="2.4.3" />
     <PackageReference Include="MongoDB.Bson" Version="2.4.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.5.1" />
   </ItemGroup>
 
 </Project>

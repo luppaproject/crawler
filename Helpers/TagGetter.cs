@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Luppa.Crawler
+namespace Luppa.Helpers
 {
     public static class TagGetter
     {
@@ -16,6 +16,8 @@ namespace Luppa.Crawler
 
             if (!string.IsNullOrEmpty(query))
                 pattern = $"<{tagName} {query}.*?>(.*?)<\\/{tagName}>";
+            else if (!string.IsNullOrEmpty(id) && tagName == "input")
+                pattern = $"<{tagName} .*?id=\"{id}\".*?value=\"(.*?)\">.*?<\\/{tagName}>";
             else if (!string.IsNullOrEmpty(id)) 
                 pattern = $"<{tagName} .*?id=\"{id}\".*?>(.*?)<\\/{tagName}>";
 

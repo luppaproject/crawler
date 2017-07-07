@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Luppa.Crawler;
 using Luppa.Data;
+using Luppa.Services.BECList;
 
 namespace Luppa
 {
     class Program
     {
+        // lista = get a new list of bidding inside BEC website
+        // buscape = execute a Buscape's API using open links inside the database
+        // bec/no args = execute a BEC's website scrapper and crawler
         static void Main(string[] args)
         {
-            var crowler = args.Length > 0 ? args[0] : "bec";
+            var crawler = args.Length > 0 ? args[0] : "bec";
 
-            Console.WriteLine("Starting crowler");
+            Console.WriteLine("Starting luppa service... WE ARE AGAINST CORRUPTION!");
 
-            switch (crowler)
+            switch (crawler)
             {
                 case "lista":
-                    Task.WaitAll(new ListService().StartCrawler());
+                    System.Console.WriteLine("Starting BEC's bidding scraper...");
+                    Task.WaitAll(new BECListService().StartService());
                     break;
                 case "buscape":
-                    System.Console.WriteLine("Starting buscape crawling...");
+                    System.Console.WriteLine("Starting buscape crawler...");
                     Task.WaitAll(new BuscapeService().StartCrawler());
                     break;
                 default:
-                    System.Console.WriteLine("Starting bec crawling...");
+                    System.Console.WriteLine("Starting bec scraper...");
                     Task.WaitAll(new CrawlerService().StartCrawler());
                     break;
             }

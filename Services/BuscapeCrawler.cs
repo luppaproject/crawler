@@ -8,6 +8,7 @@ using System.Linq;
 using MongoDB.Driver;
 using System.IO;
 using System;
+using Luppa.Helpers;
 
 namespace Luppa.Crawler
 {
