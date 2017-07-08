@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Luppa.Crawler;
 using Luppa.Data;
+using Luppa.Services.BEC;
 using Luppa.Services.BECList;
 
 namespace Luppa
@@ -30,7 +31,7 @@ namespace Luppa
                     break;
                 default:
                     System.Console.WriteLine("Starting bec scraper...");
-                    Task.WaitAll(new CrawlerService().StartCrawler());
+                    Task.WaitAll(new BECService().StartService());
                     break;
             }
         }
