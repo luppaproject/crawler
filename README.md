@@ -14,4 +14,4 @@ PS: Pull requests for json's parse are welcome!
 
 **buscape**: Buscapé website's crawler
 
-**list**: Create a list of bidding from BEC *Not available yet*
+**list**: Create a list of bidding from BEC (1 month length)
