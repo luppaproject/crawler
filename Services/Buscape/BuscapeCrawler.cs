@@ -23,7 +23,8 @@ namespace Luppa.Crawler
 
         public async Task ParseLinks(List<Bidding> biddings)
         {
-            System.Console.WriteLine($"{biddings.Count} items to parse.");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"{biddings.Count} items to parse.");
 
             foreach (var bidding in biddings)
             {
